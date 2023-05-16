@@ -96,4 +96,12 @@ System.out.println("Alterando cadastro do paciente: " + paciente.getNome());
         }
     }
 
+    void cadastrarMedico(Medico medico) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    Medico buscarMedico(String nomeMedicoConsulta) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
  }

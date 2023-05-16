@@ -51,6 +51,7 @@ public class SistemaGerenciamentoHospital {
                     System.out.print("Digite o nome do paciente a ser alterado: ");
                     String nomePacienteAlteracao = scanner.nextLine();
                     hospital.alterarCadastroPaciente(nomePacienteAlteracao);
+                    
                     break;
               case 3:
             // Mostrar lista de pacientes
@@ -66,11 +67,70 @@ for (Paciente p : hospital.getPacientes()) {
 }
 
             break;
-        case 0:
-            System.out.println("Encerrando o programa...");
-            break;
-        default:
-            System.out.println("Opção inválida!");
-            break;
+            // nao funciona
+              case 4:
+                System.out.println("=== Cadastro de Médico ===");
+                System.out.print("Digite o nome do médico: ");
+                String nomeMedico = scanner.nextLine();
+                System.out.print("Digite a especialidade do médico: ");
+                String especialidadeMedico = scanner.nextLine();
+
+                Medico medico = new Medico(nomeMedico, especialidadeMedico);
+                hospital.cadastrarMedico(medico);
+                System.out.println("Médico cadastrado com sucesso!");
+                break;
+
+            case 5:
+                System.out.println("=== Agendar Consulta ===");
+                System.out.print("Digite o nome do paciente: ");
+                String nomePacienteConsulta = scanner.nextLine();
+                System.out.print("Nome do médico: ");
+                String nomeMedicoConsulta = scanner.nextLine();
+                System.out.print("Data da consulta (dd/mm/aaaa): ");
+                String dataConsulta = scanner.nextLine();
+
+                Paciente pacienteConsulta = hospital.buscarPaciente(nomePacienteConsulta);
+                Medico medicoConsulta = hospital.buscarMedico(nomeMedicoConsulta);
+
+                if (pacienteConsulta != null && medicoConsulta != null) {
+                    DataConsulta consulta = new DataConsulta(dataConsulta, medicoConsulta);
+                    medicoConsulta.marcarConsulta(consulta);
+                    System.out.println("Consulta agendada com sucesso!");
+                } else {
+                    System.out.println("Paciente ou médico não encontrado. Verifique os dados informados.");
+                }
+                break;
+                //nao funciona
+
+            case 6:
+                System.out.println("=== Cadastrar Mensalidade ===");
+                System.out.print("Digite o nome do paciente: ");
+                String nomePacienteMensalidade = scanner.nextLine();
+                System.out.print("Valor da mensalidade: ");
+                double valorMensalidade = scanner.nextDouble();
+                scanner.nextLine(); // Consumir a quebra de linha após o próximoDouble()
+                System.out.print("Data de vencimento da mensalidade (dd/mm/aaaa): ");
+                String dataVencimentoMensalidade = scanner.nextLine();
+
+                Paciente pacienteMensalidade = hospital.buscarPaciente(nomePacienteMensalidade);
+                if (pacienteMensalidade != null) {
+                    Mensalidade mensalidade = new Mensalidade(valorMensalidade, dataVencimentoMensalidade);
+                    pacienteMensalidade.cadastrarMensalidade(mensalidade);
+                    System.out.println("Mensalidade cadastrada com sucesso!");
+                } else {
+                    System.out.println("Paciente não encontrado. Verifique o nome informado.");
+                }
+                break;
+
+            case 0:
+                System.out.println("Encerrando o programa...");
+                break;
+
+            default:
+                System.out.println("Opção inválida!");
+                break;
+        }
+
+        System.out.println();
     }
-}}}}
+}}}

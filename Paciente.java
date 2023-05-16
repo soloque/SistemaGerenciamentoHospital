@@ -64,6 +64,10 @@ class Paciente {
     public void setOutrasDoencas(List<String> listaDoencas){
     this.outrasDoencas= outrasDoencas;
 }
+
+    void cadastrarMensalidade(Mensalidade mensalidade) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
  
 
