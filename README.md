@@ -3,5 +3,5 @@ Neste sistema, é possível que hospitais gerenciem os tipos de planos e atendam
 
 
 O que falta?
-Juntar a parte de convênio e transformar em uma classe só
+Juntar a parte de convênio e transformar em uma classe só (ok)
 Criar a classe médico, marcar data e vencimento da mensalide (+3 classes)
