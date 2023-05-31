@@ -61,3 +61,4 @@ class ConvenioPremium {
         return mensalidade;
     }
 }
+
