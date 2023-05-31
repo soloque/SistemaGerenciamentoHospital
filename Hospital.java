@@ -6,13 +6,16 @@ import java.util.Scanner;
 
 class Hospital {
     private List<Paciente> pacientes;
+    private List<Medico> medicos;
 
     public Hospital() {
         pacientes = new ArrayList<>();
+        medicos = new ArrayList<>();
     }
+
     public List<Paciente> getPacientes() {
-    return pacientes;
-}
+        return pacientes;
+    }
 
     public void cadastrarPaciente(Paciente paciente) {
         pacientes.add(paciente);
@@ -32,8 +35,8 @@ class Hospital {
         Paciente paciente = buscarPaciente(nome);
         if (paciente != null) {
             Scanner scanner = new Scanner(System.in);
-            
-System.out.println("Alterando cadastro do paciente: " + paciente.getNome());
+
+            System.out.println("Alterando cadastro do paciente: " + paciente.getNome());
             System.out.println("1. Tipo Sanguíneo: " + paciente.getTipoSanguineo());
             System.out.println("2. Tipo de Convênio: " + paciente.getTipoConvenio());
             System.out.println("3. Outras Doenças: " + paciente.getOutrasDoencas());
@@ -96,12 +99,18 @@ System.out.println("Alterando cadastro do paciente: " + paciente.getNome());
         }
     }
 
-    void cadastrarMedico(Medico medico) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void cadastrarMedico(Medico medico) {
+        medicos.add(medico);
+        System.out.println("Médico cadastrado com sucesso!");
     }
 
-    Medico buscarMedico(String nomeMedicoConsulta) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+     Medico buscarMedico(String nomeMedicoConsulta) {
+        for (Medico medico : medicos) {
+            if (medico != null && medico.getNome() != null && medico.getNome().equalsIgnoreCase(nomeMedicoConsulta)) {
+                return medico;
+            }
+        }
+        return null;
     }
 
- }
+}
