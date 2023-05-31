@@ -17,6 +17,9 @@ public class SistemaGerenciamentoHospital {
     System.out.println("1. Cadastrar Paciente");
     System.out.println("2. Alterar Cadastro de Paciente");
     System.out.println("3. Mostrar Lista de Pacientes");
+    System.out.println("4. Cadastrar Medico");
+    System.out.println("5. Agendar Consulta");
+     System.out.println("6. Cadastrar Mensalidade");
     System.out.println("0. Sair");
     System.out.println("================================================");
 
