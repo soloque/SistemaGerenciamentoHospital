@@ -9,6 +9,7 @@ class Paciente {
     private List<String> outrasDoencas;
     private boolean alergiaSubstancias;
     private boolean alta;
+     private int cadastrarMensalidade;
 
     public Paciente(String nome, String tipoSanguineo, String tipoConvenio, List<String> outrasDoencas, boolean alergiaSubstancias, boolean alta) {
         this.nome = nome;
@@ -17,6 +18,7 @@ class Paciente {
         this.outrasDoencas = outrasDoencas;
         this.alergiaSubstancias = alergiaSubstancias;
         this.alta = alta;
+        this.cadastrarMensalidade = cadastrarMensalidade;
     }
 
     public String getNome() {
@@ -65,8 +67,8 @@ class Paciente {
     this.outrasDoencas= outrasDoencas;
 }
 
-    void cadastrarMensalidade(Mensalidade mensalidade) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void cadastrarMensalidade(Mensalidade mensalidade) {
+        this.cadastrarMensalidade = cadastrarMensalidade;
     }
     
  
