@@ -1,20 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package sistemagerenciamentohospital;
 
-/**
- *
- * @author silva
- */
-class DataConsulta {
+import java.util.ArrayList;
+import java.util.List;
+
+public class DataConsulta {
     private String data;
     private Medico medico;
+    private List<Paciente> pacientesAgendados;
 
     public DataConsulta(String data, Medico medico) {
         this.data = data;
         this.medico = medico;
+        this.pacientesAgendados = new ArrayList<>();
     }
 
     public String getData() {
@@ -23,5 +20,19 @@ class DataConsulta {
 
     public Medico getMedico() {
         return medico;
+    }
+
+    public List<Paciente> getPacientesAgendados() {
+        return pacientesAgendados;
+    }
+
+    public void marcarConsulta(Paciente paciente) {
+        pacientesAgendados.add(paciente);
+        System.out.println("Consulta marcada para o paciente " + paciente.getNome() + " na data " + data);
+    }
+
+    public void desmarcarConsulta(Paciente paciente) {
+        pacientesAgendados.remove(paciente);
+        System.out.println("Consulta desmarcada para o paciente " + paciente.getNome() + " na data " + data);
     }
 }
